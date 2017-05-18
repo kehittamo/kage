@@ -1,33 +1,46 @@
 <?php
+/**
+ * Extras
+ *
+ * @package kage
+ * @since 1.0.0
+ */
 
-namespace Roots\Sage\Extras;
+namespace Kehittamo\Kage\Extras;
 
-use Roots\Sage\Setup;
+use Kehittamo\Kage\Setup;
+
 
 /**
- * Add <body> classes
+ * Body class
+ *
+ * Add body classes.
+ *
+ * @param mixed $classes Class names.
  */
-function body_class($classes) {
-  // Add page slug if it doesn't exist
-  if (is_single() || is_page() && !is_front_page()) {
-    if (!in_array(basename(get_permalink()), $classes)) {
-      $classes[] = basename(get_permalink());
-    }
-  }
+function body_class( $classes ) {
 
-  // Add class if sidebar is active
-  if (Setup\display_sidebar()) {
-    $classes[] = 'sidebar-primary';
-  }
+	// Add page slug if it doesn't exist.
+	if ( is_single() || is_page() && ! is_front_page() ) {
+		if ( ! in_array( basename( get_permalink() ), $classes, true ) ) {
+			$classes[] = basename( get_permalink() );
+		}
+	}
 
-  return $classes;
+	// Add class if sidebar is active.
+	if ( Setup\display_sidebar() ) {
+		$classes[] = 'sidebar-primary';
+	}
+
+	return $classes;
 }
-add_filter('body_class', __NAMESPACE__ . '\\body_class');
+add_filter( 'body_class', __NAMESPACE__ . '\\body_class' );
 
 /**
  * Clean up the_excerpt()
  */
 function excerpt_more() {
-  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
+
+	return ' &hellip; <a href="' . get_permalink() . '">' . __( 'Continued', THEME_SLUG ) . '</a>';
 }
-add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+add_filter( 'excerpt_more', __NAMESPACE__ . '\\excerpt_more' );

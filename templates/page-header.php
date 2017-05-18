@@ -1,5 +1,15 @@
-<?php use Roots\Sage\Titles; ?>
+<?php
+/**
+ * Page header
+ *
+ * @package kage
+ * @since 1.0.0
+ */
+
+use Kehittamo\Kage\Titles;
+
+?>
 
 <div class="page-header">
-  <h1><?= Titles\title(); ?></h1>
+	<h1><?php esc_html_e( Titles\title() ); ?></h1>
 </div>

@@ -1,9 +1,9 @@
 {
-  "name": "roots/sage",
+  "name": "kehittamo/kage",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "The best WordPress starter theme with a modern front-end development workflow. Based on HTML5 Boilerplate, gulp, Bower, and Bootstrap.",
-  "homepage": "https://roots.io/sage/",
+  "description": "The best WordPress starter theme",
+  "homepage": "https://bitbucket.org/kehittamo/kage",
   "authors": [
     {
       "name": "Ben Word",
@@ -20,7 +20,7 @@
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/roots/sage/issues",
+    "issues": "https://bitbucket.org/kehittamo/kage",
     "forum": "https://discourse.roots.io/"
   },
   "require": {
