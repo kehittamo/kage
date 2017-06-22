@@ -2,26 +2,19 @@
   "name": "kehittamo/kage",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "The best WordPress starter theme",
-  "homepage": "https://bitbucket.org/kehittamo/kage",
+  "description": "A fork of the Sage starter theme",
+  "homepage": "https://github.com/kehittamo/kage",
   "authors": [
     {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
-    },
-    {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
+      "name": "Niko Myllynen",
+      "email": "niko.myllynen@kehittamo.fi"
     }
   ],
   "keywords": [
     "wordpress"
   ],
   "support": {
-    "issues": "https://bitbucket.org/kehittamo/kage",
-    "forum": "https://discourse.roots.io/"
+    "issues": "https://github.com/kehittamo/kage"
   },
   "require": {
     "php": ">=5.4.0",
