@@ -14,9 +14,6 @@
  * @package kage
  */
 
-// Constants.
-define( 'THEME_SLUG', 'kage' );
-
 // Includes.
 $kage_includes = [
 	'lib/extras.php',     // Custom functions.
@@ -27,7 +24,7 @@ $kage_includes = [
 
 foreach ( $kage_includes as $file ) {
 	if ( ! $filepath = locate_template( $file ) ) {
-		trigger_error( sprintf( wp_kses_data( __( 'Error locating %s for inclusion', THEME_SLUG ), $file_safe ) ), E_USER_ERROR );
+		trigger_error( sprintf( wp_kses_data( __( 'Error locating %s for inclusion', 'kage' ), $file_safe ) ), E_USER_ERROR );
 	}
 
 	include_once $filepath;

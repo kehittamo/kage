@@ -7,7 +7,10 @@
  */
 
 ?>
-<?php while ( have_posts() ) : the_post(); ?>
+<?php
+while ( have_posts() ) :
+	the_post();
+?>
 	<article <?php post_class(); ?>>
 		<header>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -17,7 +20,14 @@
 			<?php the_content(); ?>
 		</div>
 		<footer>
-			<?php wp_link_pages( [ 'before' => '<nav class="page-nav"><p>' . __( 'Pages:', THEME_SLUG ), 'after' => '</p></nav>' ] ); ?>
+			<?php
+			wp_link_pages(
+				[
+					'before' => '<nav class="page-nav"><p>' . __( 'Pages:', 'kage' ),
+					'after'  => '</p></nav>',
+				]
+			);
+?>
 		</footer>
 		<?php comments_template( '/templates/comments.php' ); ?>
 	</article>

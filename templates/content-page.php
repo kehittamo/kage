@@ -8,4 +8,10 @@
 
 ?>
 <?php the_content(); ?>
-<?php wp_link_pages( [ 'before' => '<nav class="page-nav"><p>' . __( 'Pages:', THEME_SLUG ), 'after' => '</p></nav>' ] ); ?>
+<?php
+wp_link_pages(
+	[
+		'before' => '<nav class="page-nav"><p>' . __( 'Pages:', 'kage' ),
+		'after'  => '</p></nav>',
+	]
+);

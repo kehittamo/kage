@@ -25,7 +25,7 @@ function setup() {
 
 	// Make theme available for translation
 	// Community translations can be found at https://github.com/roots/sage-translations .
-	load_theme_textdomain( THEME_SLUG, get_template_directory() . '/lang' );
+	load_theme_textdomain( 'kage' get_template_directory() . '/lang' );
 
 	// Enable plugins to manage the document title
 	// http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag .
@@ -35,7 +35,7 @@ function setup() {
 	// http://codex.wordpress.org/Function_Reference/register_nav_menus .
 	register_nav_menus(
 		[
-		'primary_navigation' => __( 'Primary Navigation', THEME_SLUG ),
+			'primary_navigation' => __( 'Primary Navigation', 'kage' ),
 		]
 	);
 
@@ -55,7 +55,7 @@ function setup() {
 
 	// Use main stylesheet for visual editor
 	// To add custom styles edit /assets/styles/layouts/_tinymce.scss .
-	add_editor_style( get_template_directory_uri()  . 'dist/styles/main.css' );
+	add_editor_style( get_template_directory_uri() . 'dist/styles/main.css' );
 }
 add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
 
@@ -66,23 +66,23 @@ function widgets_init() {
 
 	register_sidebar(
 		[
-		'name'          => __( 'Primary', THEME_SLUG ),
-		'id'            => 'sidebar-primary',
-		'before_widget' => '<section class="widget %1$s %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
+			'name'          => __( 'Primary', 'kage' ),
+			'id'            => 'sidebar-primary',
+			'before_widget' => '<section class="widget %1$s %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
 		]
 	);
 
 	register_sidebar(
 		[
-		'name'          => __( 'Footer', THEME_SLUG ),
-		'id'            => 'sidebar-footer',
-		'before_widget' => '<section class="widget %1$s %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
+			'name'          => __( 'Footer', 'kage' ),
+			'id'            => 'sidebar-footer',
+			'before_widget' => '<section class="widget %1$s %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
 		]
 	);
 }
@@ -97,11 +97,11 @@ function display_sidebar() {
 
 	isset( $display ) || $display = ! in_array(
 		true, [
-		// The sidebar will NOT be displayed if ANY of the following return true.
-		// @link https://codex.wordpress.org/Conditional_Tags .
-		is_404(),
-		is_front_page(),
-		is_page_template( 'template-custom.php' ),
+			// The sidebar will NOT be displayed if ANY of the following return true.
+			// @link https://codex.wordpress.org/Conditional_Tags .
+			is_404(),
+			is_front_page(),
+			is_page_template( 'template-custom.php' ),
 		], true
 	);
 
