@@ -117,7 +117,7 @@ function assets() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_style( 'kage/css', get_template_directory_uri() . '/dist/styles/main.min.css', false, null );
+	wp_enqueue_style( 'kage/css', get_template_directory_uri() . '/dist/styles/main.min.css', false, null, 'all' );
 	wp_enqueue_script( 'kage/js', get_template_directory_uri() . '/dist/scripts/main.min.js', [ 'jquery' ], null, true );
 
 }
