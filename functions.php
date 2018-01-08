@@ -16,17 +16,18 @@
 
 // Includes.
 $kage_includes = [
-	'lib/extras.php',     // Custom functions.
-	'lib/setup.php',      // Theme setup.
-	'lib/titles.php',     // Page titles.
-	'lib/wrapper.php',    // Theme wrapper class.
+	'lib/extras.php',             // Custom functions.
+	'lib/localization.php',       // Polylang fallback.
+	'lib/setup.php',              // Theme setup.
+	'lib/titles.php',             // Page titles.
+	'lib/class-kagewrapping.php', // Theme wrapper class.
 ];
 
 foreach ( $kage_includes as $file ) {
-	if ( ! $filepath = locate_template( $file ) ) {
-		trigger_error( sprintf( wp_kses_data( __( 'Error locating %s for inclusion', 'kage' ), $file_safe ) ), E_USER_ERROR );
+	$filepath = locate_template( $file );
+	if ( ! $filepath ) {
+		trigger_error( sprintf( wp_kses_data( pll__( 'Error locating %s for inclusion', 'kage' ), $file_safe ) ), E_USER_ERROR );
 	}
-
 	include_once $filepath;
 }
 unset( $file, $filepath );

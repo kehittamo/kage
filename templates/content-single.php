@@ -23,7 +23,7 @@ while ( have_posts() ) :
 			<?php
 			wp_link_pages(
 				[
-					'before' => '<nav class="page-nav"><p>' . __( 'Pages:', 'kage' ),
+					'before' => '<nav class="page-nav"><p>' . pll__( 'Pages:', 'kage' ),
 					'after'  => '</p></nav>',
 				]
 			);

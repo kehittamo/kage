@@ -25,7 +25,7 @@ function setup() {
 
 	// Make theme available for translation
 	// Community translations can be found at https://github.com/roots/sage-translations .
-	load_theme_textdomain( 'kage' get_template_directory() . '/lang' );
+	load_theme_textdomain( 'kage', get_template_directory() . '/lang' );
 
 	// Enable plugins to manage the document title
 	// http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag .
@@ -35,7 +35,7 @@ function setup() {
 	// http://codex.wordpress.org/Function_Reference/register_nav_menus .
 	register_nav_menus(
 		[
-			'primary_navigation' => __( 'Primary Navigation', 'kage' ),
+			'primary_navigation' => pll__( 'Primary Navigation', 'kage' ),
 		]
 	);
 
@@ -66,7 +66,7 @@ function widgets_init() {
 
 	register_sidebar(
 		[
-			'name'          => __( 'Primary', 'kage' ),
+			'name'          => pll__( 'Primary', 'kage' ),
 			'id'            => 'sidebar-primary',
 			'before_widget' => '<section class="widget %1$s %2$s">',
 			'after_widget'  => '</section>',
@@ -77,7 +77,7 @@ function widgets_init() {
 
 	register_sidebar(
 		[
-			'name'          => __( 'Footer', 'kage' ),
+			'name'          => pll__( 'Footer', 'kage' ),
 			'id'            => 'sidebar-footer',
 			'before_widget' => '<section class="widget %1$s %2$s">',
 			'after_widget'  => '</section>',
@@ -95,7 +95,7 @@ function display_sidebar() {
 
 	static $display;
 
-	isset( $display ) || $display = ! in_array(
+	isset( $display ) || $display = ! in_array( // @codingStandardsIgnoreLine
 		true, [
 			// The sidebar will NOT be displayed if ANY of the following return true.
 			// @link https://codex.wordpress.org/Conditional_Tags .

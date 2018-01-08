@@ -11,7 +11,7 @@
 
 <?php if ( ! have_posts() ) : ?>
 	<div class="alert alert-warning">
-		<?php esc_html_e( 'Sorry, no results were found.', 'kage' ); ?>
+		<?php pll_esc_html_e( 'Sorry, no results were found.', 'kage' ); ?>
 	</div>
 	<?php get_search_form(); ?>
 <?php endif; ?>

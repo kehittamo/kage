@@ -31,8 +31,8 @@ function sidebar_path() {
  *
  * @package kage
  */
-class KageWrapping
-{
+class KageWrapping {
+
 	/**
 	 * Stores the full path to the main template file.
 	 *
