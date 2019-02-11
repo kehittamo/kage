@@ -23,13 +23,13 @@ if ( ! function_exists( 'pll__' ) ) :
 		echo $s;
 	}
 	function pll_esc_html_e( $s ) {
-		return esc_html_e($s);
+		return esc_html_e($s); // @codingStandardsIgnoreLine
 	}
 	function pll_esc_html__( $s ) {
 		return esc_html($s);
 	}
 	function pll_esc_attr_e( $s ) {
-		return esc_attr_e($s);
+		return esc_attr_e($s); // @codingStandardsIgnoreLine
 	}
 	function pll_esc_attr__( $s ) {
 		return esc_attr($s);
