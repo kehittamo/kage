@@ -26,7 +26,7 @@ $kage_includes = [
 foreach ( $kage_includes as $file ) {
 	$filepath = locate_template( $file );
 	if ( ! $filepath ) {
-		trigger_error( sprintf( wp_kses_data( pll__( 'Error locating %s for inclusion', 'kage' ), $file_safe ) ), E_USER_ERROR );
+		trigger_error( sprintf( wp_kses_data( pll__( 'Error locating %s for inclusion', 'kage' ) ), $file ), E_USER_ERROR );
 	}
 	include_once $filepath;
 }
